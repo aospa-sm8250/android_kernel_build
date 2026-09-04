@@ -70,7 +70,7 @@ make_defconfig()
         	echo "Merging fragment configs"
         	set -x
 		(cd ${KERNEL_DIR} && \
-		${MAKE_PATH}make O=${OUT_DIR} ${MAKE_ARGS} HOSTCFLAGS="${TARGET_INCLUDES}" HOSTLDFLAGS="${TARGET_LINCLUDES}" ARCH=${ARCH} ${real_cc} ${KERNEL_SCRIPTS}/kconfig/merge_config.sh "${DEFCONFIG}" "${FRAGMENT_CONFIG}")
+		${MAKE_PATH}make O=${OUT_DIR} ${MAKE_ARGS} HOSTCFLAGS="${TARGET_INCLUDES}" HOSTLDFLAGS="${TARGET_LINCLUDES}" ARCH=${ARCH} ${real_cc} ${KERNEL_SCRIPTS}/kconfig/merge_config.sh "${DEFCONFIG}" ${FRAGMENT_CONFIG})
 		set +x
 	fi
 }
